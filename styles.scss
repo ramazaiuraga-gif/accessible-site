@@ -1,0 +1,82 @@
+// SCSS версия (структурированная, переменные и вложенность)
+$blue: #0056b3;
+$red: #dc3545;
+$white: #ffffff;
+$black: #111111;
+$gray: #f4f4f9;
+
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2.5rem;
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-pill: 25px;
+
+$shadow-1: 0 4px 6px rgba(0,0,0,0.08);
+$trans-fast: 180ms;
+$trans-ease: cubic-bezier(.2,.8,.2,1);
+
+html {
+  font-family: 'Arial', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: $gray;
+  color: $black;
+  line-height: 1.6;
+  margin: 0;
+}
+
+header {
+  background: $blue;
+  color: $white;
+  padding: calc($space-md + 0.5rem);
+  border-bottom: 5px solid $red;
+
+  .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-md;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    h1 {
+      font-size: clamp(1.25rem, 1.75vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      span {
+        color: $red;
+        background: $white;
+        padding: 0.125rem 0.5rem;
+        border-radius: $radius-sm;
+        margin-left: 0.25rem;
+      }
+    }
+  }
+
+  nav {
+    button {
+      background: $red;
+      color: $white;
+      border: none;
+      padding: 0.625rem 1.125rem;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: $radius-sm;
+      transition: background-color $trans-fast $trans-ease;
+      &:hover, &:focus-visible { background: $black; }
+    }
+  }
+}
+
+// ... далее можно компилировать остальные правила из styles.css

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Пример: доступный сайт с модальным</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>BRAND<span>NEW</span></h1>
+      </div>
+      <nav>
+        <button id="open-modal" aria-haspopup="dialog" aria-controls="share-modal">Поделиться</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Добро пожаловать — делимся идеями</h2>
+      <button class="btn-share" id="open-modal-2" aria-haspopup="dialog" aria-controls="share-modal">Поделиться</button>
+    </section>
+
+    <section class="articles-grid" aria-label="Статьи">
+      <article class="article-card" tabindex="0">
+        <h3>Как сделать UI доступным</h3>
+        <div class="date">01.09.2026</div>
+        <p>Короткое описание о важности контраста и клавиатурной навигации.</p>
+      </article>
+
+      <article class="article-card" tabindex="0">
+        <h3>Оптимизация производительности CSS</h3>
+        <div class="date">20.08.2026</div>
+        <p>Снижение repaint, использование переменных и медиа-запросов.</p>
+      </article>
+    </section>
+  </main>
+
+  <div id="share-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="share-title">
+    <div class="modal-content" role="document">
+      <button class="close-btn" aria-label="Закрыть" id="modal-close">&times;</button>
+      <h3 id="share-title">Поделиться статьёй</h3>
+
+      <form class="share-form" action="#" novalidate>
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input id="name" type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Сообщение</label>
+          <textarea id="message" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Brand. Все права защищены.</p>
+  </footer>
+
+  <script src="modal.js" defer></script>
+</body>
+</html>
